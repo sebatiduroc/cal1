@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 1</title>
+</head>
+<body>
+    <h1>Calendrier de l'Avent</h1>
+    <p>Sacha, entre le code que tu as trouvé aujourd'hui :</p>
+    <input type="text" id="codeInput" placeholder="Votre code">
+    <button onclick="verifierCode()">Débloquer</button>
+    <p id="message"></p>
+
+    <script>
+        function verifierCode() {
+            // Définir le code correct et la date autorisée
+            const codeCorrect = "YOUPI"; 
+            const dateAutorisee = new Date("2024-11-03");
+
+            // Récupérer le code saisi par l'utilisateur
+            const codeEntre = document.getElementById("codeInput").value;
+            
+            // Obtenir la date actuelle
+            const dateActuelle = new Date();
+            
+            // Vérifier si la date actuelle correspond à la date autorisée et si le code est correct
+            if (codeEntre === codeCorrect && dateActuelle.toDateString() === dateAutorisee.toDateString()) {
+                document.getElementById("message").textContent = "TU AS";
+            } else {
+                document.getElementById("message").textContent = "Le code correct doit être tapé à la date correcte";
+            }
+        }
+    </script>
+</body>
+</html>
